@@ -16,7 +16,7 @@ You can simply grep the file and search in it like this:
 
 ```bash
 # Store file
-curl https://raw.githubusercontent.com/BenjiTrapp/cisa-known-vuln-scraper/main/known_exploited_vulnerabilities.json -o cisa-kev.json
+curl https://raw.githubusercontent.com/BenjiTrapp/cisa-known-vuln-scraper/main/cisa-kev.json -o cisa-kev.json
 
 # Search by product name
 jq -r '.vulnerabilities[] | select(.product == "FTA")' cisa-kev.json
@@ -33,7 +33,7 @@ For integration within Gradle it would look like this:
 
 dependencyCheck {
     analyzers {
-        knownExploitedURL = "https://raw.githubusercontent.com/BenjiTrapp/cisa-known-vuln-scraper/main/known_exploited_vulnerabilities.json"
+        knownExploitedURL = "https://raw.githubusercontent.com/BenjiTrapp/cisa-known-vuln-scraper/main/cisa-kev.json"
     }
 }
 ```
