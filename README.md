@@ -22,10 +22,10 @@ curl https://raw.githubusercontent.com/BenjiTrapp/cisa-known-vuln-scraper/main/c
 jq -r '.vulnerabilities[] | select(.product == "FTA")' cisa-kev.json
 
 # Search by Product name
-jq -r '.vulnerabilities[] | select(.vendorProject == "Progress")' bla.json
+jq -r '.vulnerabilities[] | select(.vendorProject == "Progress")' cisa-kev.json
 
 # Search by CVE
-jq -r '.vulnerabilities[] | select(.cveID == "CVE-2023-34362")' bla.json
+jq -r '.vulnerabilities[] | select(.cveID == "CVE-2023-34362")' cisa-kev.json
 ```
 For integration within Gradle it would look like this:
 
