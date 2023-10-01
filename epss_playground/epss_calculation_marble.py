@@ -177,31 +177,12 @@ def worker(cve_id, cvss_score, epss_score, verbose_print, sem, save_output=None)
     sem.release()
 
 
-def cve_trends():
-    cve_list = []
-    try:
-        html = requests.get("https://cvetrends.com/api/cves/7days")
-        parsed = html.json()
-        if html.status_code == 200:
-            for cve in parsed.get("data"):
-                cve_list.append(cve.get("cve"))
-        else:
-            return None
-    except ConnectionError:
-        print(
-            "Unable to connect to CVE Trends. Check your Internet connection or try again")
-        return None
-    return cve_list
-
-
 def main():
     Throttle_msg = ""
     parser = argparse.ArgumentParser(description="CVE Calculation Marble", epilog='Happy Priorization & Patching',
                                      usage='cve_prioritizer.py -c CVE-XXXX-XXXX')
     parser.add_argument('-c', '--cve', type=str,
                         help='Unique CVE-ID', required=False, metavar='')
-    parser.add_argument(
-        '-d', '--demo', help='Top 10 CVEs of the last 7 days from cvetrends.com', action='store_true')
     parser.add_argument('-e', '--epss', type=float,
                         help='EPSS threshold (Default 0.2)', default=0.2, metavar='')
     parser.add_argument('-f', '--file', type=argparse.FileType('r'), help='TXT file with CVEs (One per Line)',
@@ -221,7 +202,6 @@ def main():
 
     try:
         args = parser.parse_args()
-        args.func(args)
     except Exception:
         parser.print_help()
 
@@ -254,19 +234,6 @@ def main():
             Throttle_msg = "Large number of CVEs detected, requests will be throttled to avoid API issues"
         print(LOGO + Throttle_msg + '\n' +
               'Warning: Using this tool without specifying a NIST API may result in errors' + '\n\n' + header)
-    elif args.demo:
-        try:
-            trends = cve_trends()
-            if trends:
-                cve_list = trends
-                if not os.getenv('NIST_API'):
-                    print(
-                        LOGO + 'Warning: Using this tool without specifying a NIST API may result in errors'
-                        + '\n\n' + header)
-                else:
-                    print(LOGO + header)
-        except json.JSONDecodeError:
-            print(f"Unable to connect to CVE Trends")
 
     if args.output:
         with open(args.output, 'w') as output_file:
