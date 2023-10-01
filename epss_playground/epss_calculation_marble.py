@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# This file contains the functions that create the reports
-
 import os
 import requests
 import argparse
@@ -180,7 +177,7 @@ def worker(cve_id, cvss_score, epss_score, verbose_print, sem, save_output=None)
 def main():
     Throttle_msg = ""
     parser = argparse.ArgumentParser(description="CVE Calculation Marble", epilog='Happy Priorization & Patching',
-                                     usage='cve_prioritizer.py -c CVE-XXXX-XXXX')
+                                     usage='epss_calculation_marble.py -c CVE-XXXX-XXXX')
     parser.add_argument('-c', '--cve', type=str,
                         help='Unique CVE-ID', required=False, metavar='')
     parser.add_argument('-e', '--epss', type=float,
@@ -219,7 +216,8 @@ def main():
     if args.cve:
         cve_list.append(args.cve)
         if not os.getenv('NIST_API'):
-            print(LOGO + 'Warning: Using this tool without specifying a NIST API may result in errors' + '\n\n' + header)
+            print(LOGO + Throttle_msg + '\n' +
+              f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
         else:
             print(LOGO + header)
     elif args.list:
@@ -227,7 +225,7 @@ def main():
         if not os.getenv('NIST_API') and len(cve_list) > 75:
             Throttle_msg = "Large number of CVEs detected, requests will be throttled to avoid API issues"
         print(LOGO + Throttle_msg + '\n' +
-              'Warning: Using this tool without specifying a NIST API may result in errors' + '\n\n' + header)
+              f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
     elif args.file:
         cve_list = [line.rstrip() for line in args.file]
         if not os.getenv('NIST_API') and len(cve_list) > 75:
