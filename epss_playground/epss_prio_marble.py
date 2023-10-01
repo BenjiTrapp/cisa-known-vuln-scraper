@@ -18,15 +18,15 @@ SIMPLE_HEADER = f"{'CVE-ID':<18}Priority" + "\n" + ("-" * 30)
 VERBOSE_HEADER = f"{'CVE-ID':<18}{'PRIORITY':<13}{'EPSS':<9}{'CVSS':<6}{'VERSION':<10}{'SEVERITY':<10}CISA_KEV" + \
     "\n" + ("-" * 75)
 LOGO = """
-  ______   ______                                                        
- / ___| | / / __/                                                        
-/ /__ | |/ / _/                                                          
-\_________/___/        __     __  _            __  ___         __   __   
- / ______ _/ ______ __/ ___ _/ /_(____ ___ _  /  |/  ___ _____/ /  / ___ 
-/ /__/ _ `/ / __/ // / / _ `/ __/ / _ / _ `/ / /|_/ / _ `/ __/ _ \/ / -_)
-\___/\_,_/_/\__/\_,_/_/\_,_/\__/_/_//_\_, / /_/  /_/\_,_/_/ /_.__/_/\__/ 
-                                     /___/                               
-                                                  
+  ______   ______                            
+ / ___/ | / / __/                            
+/ /__ | |/ / _/                              
+\___/_|___/___/    __  ___         __   __   
+  / _ \____(_)__  /  |/  /__ _____/ /  / /__ 
+ / ___/ __/ / _ \/ /|_/ / _ `/ __/ _ \/ / -_)
+/_/  /_/ /_/\___/_/  /_/\_,_/_/ /_.__/_/\__/ 
+
+                       🔮 Version 0.0.1 🔮                                                                    
 """""
 
 # Function to check EPSS Scores
@@ -231,7 +231,7 @@ def main():
         if not os.getenv('NIST_API') and len(cve_list) > 75:
             Throttle_msg = "Large number of CVEs detected, requests will be throttled to avoid API issues"
         print(LOGO + Throttle_msg + '\n' +
-              'Warning: Using this tool without specifying a NIST API may result in errors' + '\n\n' + header)
+              f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
 
     if args.output:
         with open(args.output, 'w') as output_file:

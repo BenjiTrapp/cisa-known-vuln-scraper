@@ -1,1 +1,0 @@
- python epss_calculation_marble.py -f demo_cves.txt -v
