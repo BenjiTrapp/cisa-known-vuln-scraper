@@ -113,3 +113,4 @@ dmypy.json
 /.pytype/
 # Cython
 /cython_debug/
+*.env
