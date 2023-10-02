@@ -29,8 +29,6 @@ LOGO = """
                        🔮 Version 0.0.1 🔮                                                                    
 """""
 
-# Function to check EPSS Scores
-
 
 def epss_check(cve_id):
     try:
@@ -51,11 +49,8 @@ def epss_check(cve_id):
         else:
             print("Error connecting to EPSS")
     except requests.exceptions.ConnectionError:
-        print("Unable to connect to EPSS. Check your Internet connection or try again")
+        print("ERROR: Unable to connect to EPSS. Check your Internet connectivitiy and try again")
         return None
-
-# Function to check NIST NVD for the CVE
-
 
 def nist_check(cve_id):
     try:
@@ -74,16 +69,14 @@ def nist_check(cve_id):
                     if unique_cve.get("cve").get("cisaExploitAdd"):
                         cisa_kev = True
 
-                cvss_metric = unique_cve.get("cve").get(
-                    "metrics").get("cvssMetricV31")
+                # CVSS 4.0 https://www.first.org/cvss/v4-0/
+                cvss_metric = unique_cve.get("cve").get("metrics").get("cvssMetricV31")
                 cvss_version = "CVSS 3.1"
                 if not cvss_metric:
-                    cvss_metric = unique_cve.get("cve").get(
-                        "metrics").get("cvssMetricV30")
+                    cvss_metric = unique_cve.get("cve").get("metrics").get("cvssMetricV30")
                     cvss_version = "CVSS 3.0"
                 if not cvss_metric:
-                    cvss_metric = unique_cve.get("cve").get(
-                        "metrics").get("cvssMetricV2")
+                    cvss_metric = unique_cve.get("cve").get("metrics").get("cvssMetricV2")
                     cvss_version = "CVSS 2.0"
 
                 if cvss_metric:
@@ -99,9 +92,9 @@ def nist_check(cve_id):
                     print(
                         f"{cve_id:<18}NIST Status: {unique_cve.get('cve').get('vulnStatus')}")
             else:
-                print(f"{cve_id:<18}Not Found in NIST NVD.")
+                print(f"INFO: {cve_id:<18} Not Found in NIST NVD.")
         else:
-            print(f"{cve_id:<18}Error code {nvd_status_code}")
+            print(f"ERROR: {cve_id:<18} Error code {nvd_status_code}")
     except requests.exceptions.ConnectionError:
         print("Unable to connect to NIST NVD. Check your Internet connection or try again")
         return None
@@ -120,10 +113,12 @@ def colored_print(priority):
 
 def print_and_write(working_file, cve_id, priority, epss, cvss_base_score, cvss_version, cvss_severity, cisa_kev, verbose):
     color_priority = colored_print(priority)
+    
     if verbose:
         print(f"{cve_id:<18}{color_priority:<22}{epss:<9}{cvss_base_score:<6}{cvss_version:<10}{cvss_severity:<10}{cisa_kev}")
     else:
         print(f"{cve_id:<18}{color_priority:<22}")
+        
     if working_file:
         working_file.write(
             f"{cve_id},{priority},{epss},{cvss_base_score},{cvss_version},{cvss_severity},{cisa_kev}\n")
@@ -140,30 +135,25 @@ def worker(cve_id, cvss_score, epss_score, verbose_print, sem, save_output=None)
     try:
         if nist_result.get("cisa_kev"):
             print_and_write(working_file, cve_id, 'Priority 1+', epss_result.get('epss'),
-                            nist_result.get('cvss_baseScore'), nist_result.get(
-                                'cvss_version'),
+                            nist_result.get('cvss_baseScore'), nist_result.get('cvss_version'),
                             nist_result.get('cvss_severity'), 'TRUE', verbose_print)
         elif nist_result.get("cvss_baseScore") >= cvss_score:
             if epss_result.get("epss") >= epss_score:
                 print_and_write(working_file, cve_id, 'Priority 1', epss_result.get('epss'),
-                                nist_result.get('cvss_baseScore'), nist_result.get(
-                                    'cvss_version'),
+                                nist_result.get('cvss_baseScore'), nist_result.get('cvss_version'),
                                 nist_result.get('cvss_severity'), 'FALSE', verbose_print)
             else:
                 print_and_write(working_file, cve_id, 'Priority 2', epss_result.get('epss'),
-                                nist_result.get('cvss_baseScore'), nist_result.get(
-                                    'cvss_version'),
+                                nist_result.get('cvss_baseScore'), nist_result.get('cvss_version'),
                                 nist_result.get('cvss_severity'), 'FALSE', verbose_print)
         else:
             if epss_result.get("epss") >= epss_score:
                 print_and_write(working_file, cve_id, 'Priority 3', epss_result.get('epss'),
-                                nist_result.get('cvss_baseScore'), nist_result.get(
-                                    'cvss_version'),
+                                nist_result.get('cvss_baseScore'), nist_result.get('cvss_version'),
                                 nist_result.get('cvss_severity'), 'FALSE', verbose_print)
             else:
                 print_and_write(working_file, cve_id, 'Priority 4', epss_result.get('epss'),
-                                nist_result.get('cvss_baseScore'), nist_result.get(
-                                    'cvss_version'),
+                                nist_result.get('cvss_baseScore'), nist_result.get('cvss_version'),
                                 nist_result.get('cvss_severity'), 'FALSE', verbose_print)
     except (TypeError, AttributeError):
         pass
@@ -215,6 +205,7 @@ def main():
 
     if args.cve:
         cve_list.append(args.cve)
+        
         if not os.getenv('NIST_API'):
             print(LOGO + Throttle_msg + '\n' +
               f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
@@ -224,31 +215,26 @@ def main():
         cve_list = args.list
         if not os.getenv('NIST_API') and len(cve_list) > 75:
             Throttle_msg = "Large number of CVEs detected, requests will be throttled to avoid API issues"
-        print(LOGO + Throttle_msg + '\n' +
-              f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
+        print(LOGO + Throttle_msg + '\n' + f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
     elif args.file:
         cve_list = [line.rstrip() for line in args.file]
         if not os.getenv('NIST_API') and len(cve_list) > 75:
             Throttle_msg = "Large number of CVEs detected, requests will be throttled to avoid API issues"
-        print(LOGO + Throttle_msg + '\n' +
-              f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
+        print(LOGO + Throttle_msg + '\n' + f'WARNING: Using this tool without specifying a NIST API may result in errors. Request one at {NIST_API_KEY_REQUEST}' + '\n\n' + header)
 
     if args.output:
         with open(args.output, 'w') as output_file:
-            output_file.write(
-                "cve_id,priority,epss,cvss,cvss_version,cvss_severity,cisa_kev"+"\n")
+            output_file.write("cve_id,priority,epss,cvss,cvss_version,cvss_severity,cisa_kev"+"\n")
 
     for cve in cve_list:
         throttle = 1
         if len(cve_list) > 75 and not os.getenv('NIST_API'):
             throttle = 6
         if not re.match(r"(CVE|cve-\d{4}-\d+$)", cve):
-            print(
-                f"{cve} Error: CVEs should be provided in the standard format CVE-0000-0000*")
+            print(f"{cve} Error: CVEs should be provided in the standard format CVE-0000-0000*")
         else:
             sem.acquire()
-            t = threading.Thread(target=worker, args=(cve.upper().strip(), cvss_threshold, epss_threshold, args.verbose,
-                                                      sem, args.output))
+            t = threading.Thread(target=worker, args=(cve.upper().strip(), cvss_threshold, epss_threshold, args.verbose, sem, args.output))
             threads.append(t)
             t.start()
             time.sleep(throttle)
