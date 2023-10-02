@@ -56,7 +56,7 @@ A quick demo can be seen here:
  python epss_prio_marble.py -f demo_cves.txt -v
 
  # Check a specific CVE
-  python epss_prio_marble.py -c <add your CVE here e.g. CVE-2023-28250 >
+ python epss_prio_marble.py -c < add your CVE here e.g. CVE-2023-28250 >
 
 # No idea? ask for help 
  python epss_prio_marble.py -h
