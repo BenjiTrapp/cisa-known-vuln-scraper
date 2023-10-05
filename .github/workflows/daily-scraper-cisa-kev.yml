@@ -22,7 +22,7 @@ jobs:
         run: curl -f --silent --output inthewild_exploited_cves.json https://inthewild.io/api/exploited
 
       - name: Scrape InTheWIld.db
-        run: curl -f --silent --output inthewild.db https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db        
+        run: curl -f --silent https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db | split -b 15M -d - inthewild_db/inthewild.db.part        
 
       - name: Commit and push if it changed
         run: |-
