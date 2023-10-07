@@ -23,9 +23,10 @@ jobs:
 
       - name: Scrape InTheWIld.db
         run: |-
-          history_folder="./inthewild_db/historical"
+          history_folder="inthewild_db/historical"
           if [ -d "$history_folder" ]; then
             rm -rf "$history_folder"
+            echo "Removed $history_folder"
           fi
 
           mkdir -p history_folder
