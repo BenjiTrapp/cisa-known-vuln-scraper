@@ -25,7 +25,6 @@ jobs:
         run: |-
           rm 'inthewild_db/inthewild.db.part*'
           curl -f --silent https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db | split -b 15M -d - inthewild_db/inthewild.db.part        
-          rm 
         
       - name: Commit and push if it changed
         run: |-
