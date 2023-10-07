@@ -23,7 +23,14 @@ jobs:
 
       - name: Scrape InTheWIld.db
         run: |-
-          rm 'inthewild_db/inthewild.db.part*'
+          history_folder="./inthewild_db/historical"
+          if [ -d "$history_folder" ]; then
+            rm -rf "$history_folder"
+          fi
+
+          mkdir -p history_folder
+          mv inthewild_db/inthewild.db.part* $history_folder
+
           curl -f --silent https://pub-4c1eae2a180542b19ea7c88f1e4ccf07.r2.dev/inthewild.db | split -b 15M -d - inthewild_db/inthewild.db.part        
         
       - name: Commit and push if it changed
