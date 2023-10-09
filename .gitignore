@@ -3,6 +3,7 @@
 *.iml
 *.ipr
 *.iws
+*.db
 /.idea/workspace.xml
 /.idea/tasks.xml
 /.idea/dictionaries
