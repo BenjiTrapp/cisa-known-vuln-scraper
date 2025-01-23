@@ -1,7 +1,7 @@
 {
     "title": "CISA Catalog of Known Exploited Vulnerabilities",
-    "catalogVersion": "2025.01.16",
-    "dateReleased": "2025-01-16T15:00:56.7822Z",
+    "catalogVersion": "2025.01.22",
+    "dateReleased": "2025-01-22T19:49:22.4091Z",
     "count": 1250,
     "vulnerabilities": [
         {
@@ -67,10 +67,10 @@
         {
             "cveID": "CVE-2024-55591",
             "vendorProject": "Fortinet",
-            "product": "FortiOS",
-            "vulnerabilityName": "Fortinet FortiOS Authorization Bypass Vulnerability",
+            "product": "FortiOS and FortiProxy",
+            "vulnerabilityName": "Fortinet FortiOS and FortiProxy Authentication Bypass Vulnerability",
             "dateAdded": "2025-01-14",
-            "shortDescription": "Fortinet FortiOS contains an authorization bypass vulnerability that may allow an unauthenticated remote attacker to gain super-admin privileges via crafted requests to Node.js websocket module.",
+            "shortDescription": "Fortinet FortiOS and FortiProxy contain an authentication bypass vulnerability that may allow an unauthenticated, remote attacker to gain super-admin privileges via crafted requests to Node.js websocket module.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-01-21",
             "knownRansomwareCampaignUse": "Unknown",
