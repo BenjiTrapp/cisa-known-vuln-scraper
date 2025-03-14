@@ -1,16 +1,46 @@
 {
     "title": "CISA Catalog of Known Exploited Vulnerabilities",
-    "catalogVersion": "2025.03.11",
-    "dateReleased": "2025-03-11T17:10:05.6457Z",
-    "count": 1300,
+    "catalogVersion": "2025.03.13",
+    "dateReleased": "2025-03-13T19:37:52.2229Z",
+    "count": 1302,
     "vulnerabilities": [
+        {
+            "cveID": "CVE-2025-21590",
+            "vendorProject": "Juniper",
+            "product": "Junos OS",
+            "vulnerabilityName": "Juniper Junos OS Improper Isolation or Compartmentalization Vulnerability",
+            "dateAdded": "2025-03-13",
+            "shortDescription": "Juniper Junos OS contains an improper isolation or compartmentalization vulnerability. This vulnerability could allows a local attacker with high privileges to inject arbitrary code.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-04-03",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/supportportal.juniper.net\/s\/article\/2025-03-Out-of-Cycle-Security-Bulletin-Junos-OS-A-local-attacker-with-shell-access-can-execute-arbitrary-code-CVE-2025-21590?language=en_US ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-21590",
+            "cwes": [
+                "CWE-653"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-24201",
+            "vendorProject": "Apple",
+            "product": "Multiple Products",
+            "vulnerabilityName": "Apple Multiple Products WebKit Out-of-Bounds Write Vulnerability",
+            "dateAdded": "2025-03-13",
+            "shortDescription": "Apple iOS, iPadOS, macOS, and other Apple products contain an out-of-bounds write vulnerability in WebKit that may allow maliciously crafted web content to break out of Web Content sandbox. This vulnerability could impact HTML parsers that use WebKit, including but not limited to Apple Safari and non-Apple products which rely on WebKit for HTML processing.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-04-03",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/support.apple.com\/en-us\/122281 ; https:\/\/support.apple.com\/en-us\/122283 ; https:\/\/support.apple.com\/en-us\/122284 ; https:\/\/support.apple.com\/en-us\/122285 ; ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-24201",
+            "cwes": [
+                "CWE-787"
+            ]
+        },
         {
             "cveID": "CVE-2025-24993",
             "vendorProject": "Microsoft",
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows NTFS Heap-Based Buffer Overflow Vulnerability",
             "dateAdded": "2025-03-11",
-            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains a heap-based buffer overflow vulnerability that could allow an authorized attacker to execute code locally.",
+            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains a heap-based buffer overflow vulnerability that allows an unauthorized attacker to execute code locally.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-04-01",
             "knownRansomwareCampaignUse": "Unknown",
@@ -25,7 +55,7 @@
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows NTFS Out-Of-Bounds Read Vulnerability",
             "dateAdded": "2025-03-11",
-            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains an out-of-bounds read vulnerability that could allow for information disclosure.",
+            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains an out-of-bounds read vulnerability that allows an authorized attacker to disclose information locally.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-04-01",
             "knownRansomwareCampaignUse": "Unknown",
@@ -40,13 +70,14 @@
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows Fast FAT File System Driver Integer Overflow Vulnerability",
             "dateAdded": "2025-03-11",
-            "shortDescription": "Microsoft Windows Fast FAT File System Driver contains an integer overflow or wraparound vulnerability that allows an unauthorized attacker to execute code with a physical attack.",
+            "shortDescription": "Microsoft Windows Fast FAT File System Driver contains an integer overflow or wraparound vulnerability that allows an unauthorized attacker to execute code locally.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-04-01",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "https:\/\/msrc.microsoft.com\/update-guide\/en-US\/vulnerability\/CVE-2025-24985 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-24985",
             "cwes": [
-                "CWE-190"
+                "CWE-190",
+                "CWE-122"
             ]
         },
         {
@@ -55,7 +86,7 @@
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows NTFS Information Disclosure Vulnerability",
             "dateAdded": "2025-03-11",
-            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains an insertion of sensitive Information into log file vulnerability that allows an authorized attacker to disclose information locally. An attacker who successfully exploited this vulnerability could potentially read portions of heap memory.",
+            "shortDescription": "Microsoft Windows New Technology File System (NTFS) contains an insertion of sensitive Information into log file vulnerability that allows an unauthorized attacker to disclose information with a physical attack. An attacker who successfully exploited this vulnerability could potentially read portions of heap memory.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-04-01",
             "knownRansomwareCampaignUse": "Unknown",
@@ -85,7 +116,7 @@
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows Management Console (MMC) Improper Neutralization Vulnerability",
             "dateAdded": "2025-03-11",
-            "shortDescription": "Microsoft Windows Management Console (MMC) contains an improper neutralization vulnerability that allows an unauthorized attacker to execute code over a network.",
+            "shortDescription": "Microsoft Windows Management Console (MMC) contains an improper neutralization vulnerability that allows an unauthorized attacker to bypass a security feature locally.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-04-01",
             "knownRansomwareCampaignUse": "Unknown",
