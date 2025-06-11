@@ -1,9 +1,69 @@
 {
     "title": "CISA Catalog of Known Exploited Vulnerabilities",
-    "catalogVersion": "2025.06.05",
-    "dateReleased": "2025-06-05T18:02:07.1325Z",
-    "count": 1360,
+    "catalogVersion": "2025.06.10",
+    "dateReleased": "2025-06-10T17:05:43.0382Z",
+    "count": 1364,
     "vulnerabilities": [
+        {
+            "cveID": "CVE-2025-33053",
+            "vendorProject": "Web Distributed Authoring and Versioning",
+            "product": "Web Distributed Authoring and Versioning (WebDAV)",
+            "vulnerabilityName": "Web Distributed Authoring and Versioning (WebDAV) External Control of File Name or Path Vulnerability",
+            "dateAdded": "2025-06-10",
+            "shortDescription": "Web Distributed Authoring and Versioning (WebDAV) contains an external control of file name or path vulnerability. This vulnerability could allow an unauthorized attacker to execute code over a network. This vulnerability could affect various products that implement WebDAV, including but not limited to Microsoft Windows.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-07-01",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "This vulnerability affects a common open-source project, third-party library, or a protocol used by different products. For more information, please see: https:\/\/msrc.microsoft.com\/update-guide\/en-US\/vulnerability\/CVE-2025-33053 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-33053",
+            "cwes": [
+                "CWE-73"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-24016",
+            "vendorProject": "Wazuh",
+            "product": "Wazuh Server",
+            "vulnerabilityName": "Wazuh Server Deserialization of Untrusted Data Vulnerability",
+            "dateAdded": "2025-06-10",
+            "shortDescription": "Wazuh contains a deserialization of untrusted data vulnerability that allows for remote code execution on Wazuh servers.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-07-01",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/github.com\/wazuh\/wazuh\/security\/advisories\/GHSA-hcrc-79hj-m3qh ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-24016",
+            "cwes": [
+                "CWE-502"
+            ]
+        },
+        {
+            "cveID": "CVE-2024-42009",
+            "vendorProject": "Roundcube",
+            "product": "Webmail",
+            "vulnerabilityName": "RoundCube Webmail Cross-Site Scripting Vulnerability",
+            "dateAdded": "2025-06-09",
+            "shortDescription": "RoundCube Webmail contains a cross-site scripting vulnerability. This vulnerability could allow a remote attacker to steal and send emails of a victim via a crafted e-mail message that abuses a Desanitization issue in message_body() in program\/actions\/mail\/show.php.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-06-30",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/roundcube.net\/news\/2024\/08\/04\/security-updates-1.6.8-and-1.5.8 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-42009",
+            "cwes": [
+                "CWE-79"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-32433",
+            "vendorProject": "Erlang",
+            "product": "Erlang\/OTP",
+            "vulnerabilityName": "Erlang Erlang\/OTP SSH Server Missing Authentication for Critical Function Vulnerability",
+            "dateAdded": "2025-06-09",
+            "shortDescription": "Erlang Erlang\/OTP SSH server contains a missing authentication for critical function vulnerability. This could allow an attacker to execute arbitrary commands without valid credentials, potentially leading to unauthenticated remote code execution (RCE). By exploiting a flaw in how SSH protocol messages are handled, a malicious actor could gain unauthorized access to affected systems. This vulnerability could affect various products that implement Erlang\/OTP SSH server, including\u2014but not limited to\u2014Cisco, NetApp, and SUSE.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-06-30",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "This vulnerability affects a common open-source project, third-party library, or a protocol used by different products. For more information, please see: https:\/\/github.com\/erlang\/otp\/security\/advisories\/GHSA-37cp-fgq5-7wc2 ; https:\/\/sec.cloudapps.cisco.com\/security\/center\/content\/CiscoSecurityAdvisory\/cisco-sa-erlang-otp-ssh-xyZZy ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-32433",
+            "cwes": [
+                "CWE-306"
+            ]
+        },
         {
             "cveID": "CVE-2025-5419",
             "vendorProject": "Google",
@@ -4253,7 +4313,7 @@
             "shortDescription": "Fortinet FortiOS contains an out-of-bound write vulnerability that allows a remote unauthenticated attacker to execute code or commands via specially crafted HTTP requests.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2024-02-16",
-            "knownRansomwareCampaignUse": "Unknown",
+            "knownRansomwareCampaignUse": "Known",
             "notes": "https:\/\/fortiguard.fortinet.com\/psirt\/FG-IR-24-015 ;   https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-21762",
             "cwes": [
                 "CWE-787"
