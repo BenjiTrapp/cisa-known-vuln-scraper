@@ -1,9 +1,24 @@
 {
     "title": "CISA Catalog of Known Exploited Vulnerabilities",
-    "catalogVersion": "2025.10.06",
-    "dateReleased": "2025-10-06T18:50:56.2104Z",
-    "count": 1434,
+    "catalogVersion": "2025.10.08",
+    "dateReleased": "2025-10-08T15:06:53.3731Z",
+    "count": 1435,
     "vulnerabilities": [
+        {
+            "cveID": "CVE-2025-27915",
+            "vendorProject": "Synacor",
+            "product": "Zimbra Collaboration Suite (ZCS)",
+            "vulnerabilityName": "Synacor Zimbra Collaboration Suite (ZCS) Cross-site Scripting Vulnerability",
+            "dateAdded": "2025-10-07",
+            "shortDescription": "Synacor Zimbra Collaboration Suite (ZCS) contains a cross-site scripting vulnerability that exists in the Classic Web Client due to insufficient sanitization of HTML content in ICS files. When a user views an e-mail message containing a malicious ICS entry, its embedded JavaScript executes via an ontoggle event inside a tag. This allows an attacker to run arbitrary JavaScript within the victim's session, potentially leading to unauthorized actions such as setting e-mail filters to redirect messages to an attacker-controlled address. As a result, an attacker can perform unauthorized actions on the victim's account, including e-mail redirection and data exfiltration.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-10-28",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/wiki.zimbra.com\/wiki\/Security_Center ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-27915",
+            "cwes": [
+                "CWE-79"
+            ]
+        },
         {
             "cveID": "CVE-2021-22555",
             "vendorProject": "Linux",
@@ -51,7 +66,7 @@
             "product": "Windows",
             "vulnerabilityName": "Microsoft Windows Out-of-Bounds Write Vulnerability",
             "dateAdded": "2025-10-06",
-            "shortDescription": "Microsoft Windows contains a n out-of-bounds write vulnerability in the InformationCardSigninHelper Class ActiveX control, icardie.dll. An attacker could exploit the vulnerability by constructing a specially crafted webpage. When a user views the webpage, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. The impacted product could be end-of-life (EoL) and\/or end-of-service (EoS). Users should discontinue product utilization.",
+            "shortDescription": "Microsoft Windows contains an out-of-bounds write vulnerability in the InformationCardSigninHelper Class ActiveX control, icardie.dll. An attacker could exploit the vulnerability by constructing a specially crafted webpage. When a user views the webpage, the vulnerability could allow remote code execution. An attacker who successfully exploited this vulnerability could gain the same user rights as the current user. The impacted product could be end-of-life (EoL) and\/or end-of-service (EoS). Users should discontinue product utilization.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-10-27",
             "knownRansomwareCampaignUse": "Unknown",
@@ -5298,7 +5313,7 @@
             "shortDescription": "Microsoft Windows Internet Shortcut Files contains an unspecified vulnerability that allows for a security feature bypass.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2024-03-05",
-            "knownRansomwareCampaignUse": "Unknown",
+            "knownRansomwareCampaignUse": "Known",
             "notes": "https:\/\/msrc.microsoft.com\/update-guide\/en-US\/vulnerability\/CVE-2024-21412; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-21412",
             "cwes": [
                 "CWE-693"
@@ -5388,8 +5403,8 @@
             "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure), Ivanti Policy Secure, and Ivanti Neurons contain a server-side request forgery (SSRF) vulnerability in the SAML component that allows an attacker to access certain restricted resources without authentication.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2024-02-02",
-            "knownRansomwareCampaignUse": "Unknown",
-            "notes": "https:\/\/forums.ivanti.com\/s\/article\/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US;  https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-21893",
+            "knownRansomwareCampaignUse": "Known",
+            "notes": "https:\/\/forums.ivanti.com\/s\/article\/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-21893",
             "cwes": [
                 "CWE-918"
             ]
@@ -5538,7 +5553,7 @@
             "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure) and Ivanti Policy Secure gateways contain an authentication bypass vulnerability in the web component that allows an attacker to access restricted resources by bypassing control checks. This vulnerability can be leveraged in conjunction with CVE-2024-21887, a command injection vulnerability.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2024-01-22",
-            "knownRansomwareCampaignUse": "Unknown",
+            "knownRansomwareCampaignUse": "Known",
             "notes": "Please apply mitigations per vendor instructions. For more information, please see: https:\/\/forums.ivanti.com\/s\/article\/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ;  https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2023-46805",
             "cwes": [
                 "CWE-287"
@@ -5553,7 +5568,7 @@
             "shortDescription": "Ivanti Connect Secure (ICS, formerly known as Pulse Connect Secure) and Ivanti Policy Secure contain a command injection vulnerability in the web components of these products, which can allow an authenticated administrator to send crafted requests to execute code on affected appliances. This vulnerability can be leveraged in conjunction with CVE-2023-46805, an authenticated bypass issue.",
             "requiredAction": "Apply mitigations per vendor instructions or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2024-01-22",
-            "knownRansomwareCampaignUse": "Unknown",
+            "knownRansomwareCampaignUse": "Known",
             "notes": "Please apply mitigations per vendor instructions. For more information, please see: https:\/\/forums.ivanti.com\/s\/article\/KB-CVE-2023-46805-Authentication-Bypass-CVE-2024-21887-Command-Injection-for-Ivanti-Connect-Secure-and-Ivanti-Policy-Secure-Gateways?language=en_US ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2024-21887",
             "cwes": [
                 "CWE-77"
