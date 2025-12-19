@@ -1,9 +1,128 @@
 {
     "title": "CISA Catalog of Known Exploited Vulnerabilities",
-    "catalogVersion": "2025.12.11",
-    "dateReleased": "2025-12-11T19:12:53.4105Z",
-    "count": 1473,
+    "catalogVersion": "2025.12.18",
+    "dateReleased": "2025-12-18T13:42:24.0859Z",
+    "count": 1481,
     "vulnerabilities": [
+        {
+            "cveID": "CVE-2025-59374",
+            "vendorProject": "ASUS",
+            "product": "Live Update",
+            "vulnerabilityName": "ASUS Live Update Embedded Malicious Code Vulnerability",
+            "dateAdded": "2025-12-17",
+            "shortDescription": "ASUS Live Update contains an embedded malicious code vulnerability client were distributed with unauthorized modifications introduced through a supply chain compromise. The modified builds could cause devices meeting specific targeting conditions to perform unintended actions. The impacted product could be end-of-life (EoL) and\/or end-of-service (EoS). Users should discontinue product utilization.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2026-01-07",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/www.asus.com\/support\/faq\/1018727\/ ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-59374",
+            "cwes": [
+                "CWE-506"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-40602",
+            "vendorProject": "SonicWall",
+            "product": "SMA1000 appliance",
+            "vulnerabilityName": "SonicWall SMA1000 Missing Authorization Vulnerability",
+            "dateAdded": "2025-12-17",
+            "shortDescription": "SonicWall SMA1000 contains a missing authorization vulnerability that could allow for privilege escalation appliance management console (AMC) of affected devices.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable",
+            "dueDate": "2025-12-24",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "Check for signs of potential compromise on all internet accessible SonicWall SMA1000 instances after applying mitigations. For more information please see: https:\/\/psirt.global.sonicwall.com\/vuln-detail\/SNWLID-2025-0019 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-40602",
+            "cwes": [
+                "CWE-862",
+                "CWE-250"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-20393",
+            "vendorProject": "Cisco",
+            "product": "Multiple Products",
+            "vulnerabilityName": "Cisco Multiple Products Improper Input Validation Vulnerability",
+            "dateAdded": "2025-12-17",
+            "shortDescription": "Cisco Secure Email Gateway, Secure Email, AsyncOS Software, and Web Manager appliances contains an improper input validation vulnerability that allows threat actors to execute arbitrary commands with root privileges on the underlying operating system of an affected appliance.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-12-24",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "Please adhere to Cisco's guidelines to assess exposure and mitigate risks. Check for signs of potential compromise on all internet accessible Cisco products affected by this vulnerability. Apply any final mitigations provided by the vendor as soon as they become available. For more information please see: https:\/\/sec.cloudapps.cisco.com\/security\/center\/content\/CiscoSecurityAdvisory\/cisco-sa-sma-attack-N9bf4 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-20393",
+            "cwes": [
+                "CWE-20"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-59718",
+            "vendorProject": "Fortinet",
+            "product": "Multiple Products",
+            "vulnerabilityName": "Fortinet Multiple Products Improper Verification of Cryptographic Signature Vulnerability",
+            "dateAdded": "2025-12-16",
+            "shortDescription": "Fortinet FortiOS, FortiSwitchMaster, FortiProxy, and FortiWeb contain an improper verification of cryptographic signature vulnerability that may allow an unauthenticated attacker to bypass the FortiCloud SSO login authentication via a crafted SAML message. Please be aware that CVE-2025-59719 pertains to the same problem and is mentioned in the same vendor advisory. Ensure to apply all patches mentioned in the advisory.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2025-12-23",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/fortiguard.fortinet.com\/psirt\/FG-IR-25-647 ; https:\/\/docs.fortinet.com\/upgrade-tool\/fortigate ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-59718",
+            "cwes": [
+                "CWE-347"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-14611",
+            "vendorProject": "Gladinet",
+            "product": "CentreStack and Triofox",
+            "vulnerabilityName": "Gladinet CentreStack and Triofox Hard Coded Cryptographic Vulnerability",
+            "dateAdded": "2025-12-15",
+            "shortDescription": "Gladinet CentreStack and TrioFox contain a hardcoded cryptographic keys vulnerability for their implementation of the AES cryptoscheme. This vulnerability degrades security for public exposed endpoints that may make use of it and may offer arbitrary local file inclusion when provided a specially crafted request without authentication.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2026-01-05",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/www.centrestack.com\/p\/gce_latest_release.html ; https:\/\/access.triofox.com\/releases_history\/; https:\/\/support.centrestack.com\/hc\/en-us\/articles\/360007159054-Hardening-the-CentreStack-Cluster#h_01JQRV57T37HJFQZKBZH9NBXQP ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-14611",
+            "cwes": [
+                "CWE-798"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-43529",
+            "vendorProject": "Apple",
+            "product": "Multiple Products",
+            "vulnerabilityName": "Apple Multiple Products Use-After-Free WebKit Vulnerability",
+            "dateAdded": "2025-12-15",
+            "shortDescription": "Apple iOS, iPadOS, macOS, and other Apple products contain a use-after-free vulnerability in WebKit. Processing maliciously crafted web content may lead to memory corruption. This vulnerability could impact HTML parsers that use WebKit, including but not limited to Apple Safari and non-Apple products which rely on WebKit for HTML processing.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2026-01-05",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/support.apple.com\/en-us\/125884 ; https:\/\/support.apple.com\/en-us\/125892 ; https:\/\/support.apple.com\/en-us\/125885 ; https:\/\/support.apple.com\/en-us\/125886 ; https:\/\/support.apple.com\/en-us\/125889 ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-43529",
+            "cwes": [
+                "CWE-416"
+            ]
+        },
+        {
+            "cveID": "CVE-2018-4063",
+            "vendorProject": "Sierra Wireless",
+            "product": "AirLink ALEOS",
+            "vulnerabilityName": "Sierra Wireless AirLink ALEOS Unrestricted Upload of File with Dangerous Type Vulnerability",
+            "dateAdded": "2025-12-12",
+            "shortDescription": "Sierra Wireless AirLink ALEOS contains an unrestricted upload of file with dangerous type vulnerability. A specially crafted HTTP request can upload a file, resulting in executable code being uploaded, and routable, to the webserver. An attacker can make an authenticated HTTP request to trigger this vulnerability. The impacted product could be end-of-life (EoL) and\/or end-of-service (EoS). Users should discontinue product utilization.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2026-01-02",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/www.cisa.gov\/news-events\/ics-advisories\/icsa-19-122-03 ; https:\/\/source.sierrawireless.com\/resources\/airlink\/software_reference_docs\/technical-bulletin\/sierra-wireless-technical-bulletin---swi-psa-2019-003 ; https:\/\/source.sierrawireless.com\/resources\/airlink\/hardware_reference_docs\/airlink_es450_eol ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2018-4063",
+            "cwes": [
+                "CWE-434"
+            ]
+        },
+        {
+            "cveID": "CVE-2025-14174",
+            "vendorProject": "Google",
+            "product": "Chromium",
+            "vulnerabilityName": "Google Chromium Out of Bounds Memory Access Vulnerability",
+            "dateAdded": "2025-12-12",
+            "shortDescription": "Google Chromium contains an out of bounds memory access vulnerability in ANGLE that could allow a remote attacker to perform out of bounds memory access via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+            "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
+            "dueDate": "2026-01-02",
+            "knownRansomwareCampaignUse": "Unknown",
+            "notes": "https:\/\/chromereleases.googleblog.com\/2025\/12\/stable-channel-update-for-desktop_10.html ; https:\/\/learn.microsoft.com\/en-us\/deployedge\/microsoft-edge-relnotes-security ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-14174",
+            "cwes": []
+        },
         {
             "cveID": "CVE-2025-58360",
             "vendorProject": "OSGeo",
@@ -88,7 +207,7 @@
             "shortDescription": "Meta React Server Components contains a remote code execution vulnerability that could allow unauthenticated remote code execution by exploiting a flaw in how React decodes payloads sent to React Server Function endpoints. Please note CVE-2025-66478 has been rejected, but it is associated with CVE-2025- 55182.",
             "requiredAction": "Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.",
             "dueDate": "2025-12-12",
-            "knownRansomwareCampaignUse": "Unknown",
+            "knownRansomwareCampaignUse": "Known",
             "notes": "Check for signs of potential compromise on all internet accessible REACT instances after applying mitigations. For more information, please see: https:\/\/react.dev\/blog\/2025\/12\/03\/critical-security-vulnerability-in-react-server-components ; https:\/\/github.com\/vercel-labs\/fix-react2shell-next?tab=readme-ov-file ; https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2025-55182",
             "cwes": []
         },
@@ -19930,7 +20049,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Windows Print Spooler contains an unspecified vulnerability due to the Windows Print Spooler service improperly performing privileged file operations. Successful exploitation allows an attacker to perform remote code execution with SYSTEM privileges. The vulnerability is also known under the moniker of PrintNightmare.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-07-20",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-04 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-04-mitigate-windows-print-spooler-service-vulnerability) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-04. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-34527",
             "cwes": [
@@ -20004,7 +20123,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Windows DNS Servers fail to properly handle requests, allowing an attacker to perform remote code execution in the context of the Local System Account. The vulnerability is also known under the moniker of SIGRed.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2020-07-24",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 20-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-20-03-mitigate-windows-dns-server-remote-code-execution-vulnerability-july-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-1350",
             "cwes": []
@@ -20351,7 +20470,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft's Netlogon Remote Protocol (MS-NRPC) contains a privilege escalation vulnerability when an attacker establishes a vulnerable Netlogon secure channel connection to a domain controller. An attacker who successfully exploits the vulnerability could run a specially crafted application on a device on the network. The vulnerability is also known under the moniker of Zerologon.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2020-09-21",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 20-04 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-20-04-mitigate-netlogon-elevation-privilege-vulnerability-august-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-04. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-1472",
             "cwes": [
@@ -20366,7 +20485,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-16",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-02 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-26855",
             "cwes": [
@@ -20381,7 +20500,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-16",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-02 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-26858",
             "cwes": []
@@ -20394,7 +20513,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-16",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-02 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-27065",
             "cwes": [
@@ -20454,7 +20573,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Windows CryptoAPI (Crypt32.dll) contains a spoofing vulnerability in the way it validates Elliptic Curve Cryptography (ECC) certificates. An attacker could exploit the vulnerability by using a spoofed code-signing certificate to sign a malicious executable, making it appear the file was from a trusted, legitimate source. A successful exploit could also allow the attacker to conduct man-in-the-middle attacks and decrypt confidential information on user connections to the affected software. The vulnerability is also known under the moniker of CurveBall.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2020-01-29",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 20-02 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-20-02-mitigate-windows-vulnerabilities-january-2020-patch-tuesday) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 20-02. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-0601",
             "cwes": [
@@ -20512,7 +20631,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Microsoft Exchange Server contains an unspecified vulnerability that allows for remote code execution. This vulnerability is part of the ProxyLogon exploit chain.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-16",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-02 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-02-mitigate-microsoft-exchange-premises-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-02. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-26857",
             "cwes": [
@@ -20825,7 +20944,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure contains a use-after-free vulnerability that allow a remote, unauthenticated attacker to execute code via license services.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-22893",
             "cwes": [
@@ -20840,7 +20959,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure contains an unspecified vulnerability in the admin web interface that could allow an authenticated attacker to upload a custom template to perform code execution.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-8243",
             "cwes": [
@@ -20855,7 +20974,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure contains an unrestricted file upload vulnerability that allows an authenticated administrator to perform a file write via a maliciously crafted archive upload in the administrator web interface.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-22900",
             "cwes": [
@@ -20870,7 +20989,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure Collaboration Suite contains a buffer overflow vulnerabilities that allows a remote authenticated users to execute code as the root user via maliciously crafted meeting room.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-22894",
             "cwes": [
@@ -20885,7 +21004,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Pulse Connect Secure contains an unspecified vulnerability that allows an authenticated attacker to perform code execution using uncontrolled gzip extraction.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2020-8260",
             "cwes": [
@@ -20900,7 +21019,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure contains a command injection vulnerability that allows remote authenticated users to perform remote code execution via Windows File Resource Profiles.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Unknown",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2021-22899",
             "cwes": [
@@ -20915,7 +21034,7 @@
             "dateAdded": "2021-11-03",
             "shortDescription": "Ivanti Pulse Connect Secure contains an arbitrary file read vulnerability that allows an unauthenticated remote attacker with network access via HTTPS to send a specially crafted URI.",
             "requiredAction": "Apply updates per vendor instructions.",
-            "dueDate": "2021-04-23",
+            "dueDate": "2022-05-03",
             "knownRansomwareCampaignUse": "Known",
             "notes": "Reference CISA's ED 21-03 (https:\/\/www.cisa.gov\/news-events\/directives\/ed-21-03-mitigate-pulse-connect-secure-product-vulnerabilities) for further guidance and requirements. Note: The due date for addressing this vulnerability aligns with the requirements outlined in ED 21-03. https:\/\/nvd.nist.gov\/vuln\/detail\/CVE-2019-11510",
             "cwes": [
